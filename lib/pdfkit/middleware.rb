@@ -19,8 +19,7 @@ class PDFKit
         body = response.respond_to?(:body) ? response.body : response.join
         body = body.join if body.is_a?(Array)
         puts "logging from middle ware"
-        Rails.logger.info  "logging from middle ware with rails logger "
-        puts translate_paths(body, env)
+        Rails.logger.info  translate_paths(body, env)
         body = PDFKit.new(translate_paths(body, env), @options).to_pdf
         response = [body]
 
