@@ -60,7 +60,8 @@ class PDFKit
 
     args = command(path)
     invoke = args.join(' ')
-    
+   
+   puts "string that is invoked "
     puts invoke
 
     result = IO.popen(invoke, "wb+") do |pdf|
