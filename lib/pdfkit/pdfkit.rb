@@ -60,7 +60,7 @@ class PDFKit
 
     args = command(path)
     invoke = args.join(' ')
-   
+    Rails.logger.info "Some debugging info I want to see in my development log." 
    puts "string that is invoked "
     puts invoke
 
