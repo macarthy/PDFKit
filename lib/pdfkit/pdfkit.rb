@@ -60,9 +60,8 @@ class PDFKit
 
     args = command(path)
     invoke = args.join(' ')
-    Rails.logger.info "Some debugging info I want to see in my development log." 
-   puts "string that is invoked "
-    puts invoke
+    Rails.logger.info  "string that is invoked "
+    Rails.logger.info  invoke
 
     result = IO.popen(invoke, "wb+") do |pdf|
       pdf.puts(@source.to_s) if @source.html?
